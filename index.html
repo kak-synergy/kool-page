@@ -1388,7 +1388,7 @@ footer span { color: var(--ks-pink); }
       <div class="data-card reveal"><div class="data-val">115K+</div><div class="data-lbl">Commandes Glovo en 2025</div></div>
       <div class="data-card reveal"><div class="data-val">+12,4%</div><div class="data-lbl">Croissance Q1 2026 vs Q1 2025</div></div>
       <div class="data-card reveal"><div class="data-val">~320</div><div class="data-lbl">Commandes / jour (moy. réseau)</div></div>
-      <div class="data-card reveal"><div class="data-val">~30%</div><div class="data-lbl">Commission Glovo prélevée</div></div>
+      <div class="data-card reveal"><div class="data-val">~15%</div><div class="data-lbl">Commission Glovo prélevée</div></div>
     </div>
 
     <div class="vol-chart reveal">
@@ -1443,9 +1443,9 @@ footer span { color: var(--ks-pink); }
       </div>
       <div class="channel-card ch-ora reveal">
         <span class="channel-badge">Nouvel entrant</span>
-        <h3>App Kool by Ora Technologie</h3>
+        <h3>App Koool by Ora Technologie</h3>
         <p>Marketplace concurrente qui vient de signer avec Kool Smoothie. 0% de commission — Ora a besoin de vendeurs trendy comme KS pour attirer ses utilisateurs. Leurs propres livreurs.</p>
-        <div class="channel-price" style="color:#1565c0">0% commission · Livreurs Ora</div>
+        <div class="channel-price" style="color:#1565c0">0% commission (3 mois) · Livreurs Ora</div>
       </div>
       <div class="channel-card ch-highlight reveal">
         <span class="channel-badge">Canal stratégique</span>
@@ -2002,8 +2002,8 @@ footer span { color: var(--ks-pink); }
       </div>
       <div class="roadmap-step reveal">
         <div class="week">S4</div>
-        <h4>Pilote Marrakech</h4>
-        <p>Lancement contrôlé sur le PDV Guéliz (à valider avec Kool Smoothie), mesure KPIs & SLA.</p>
+        <h4>Pilote Maarif</h4>
+        <p>Lancement contrôlé sur le PDV Maarif (à valider avec Kool Smoothie), mesure KPIs & SLA.</p>
       </div>
       <div class="roadmap-step reveal">
         <div class="week">S5+</div>
@@ -2038,9 +2038,9 @@ footer span { color: var(--ks-pink); }
       </div>
       <div class="next-card reveal">
         <div class="cta-num">02</div>
-        <h4>Lancement pilote Marrakech</h4>
+        <h4>Lancement pilote Maarif</h4>
         <p>
-          Démarrage d'un pilote contrôlé de 4 semaines sur le PDV Guéliz (sous réserve
+          Démarrage d'un pilote contrôlé de 4 semaines sur le PDV Maarif (sous réserve
           de validation finale) pour mesurer la performance opérationnelle réelle.
         </p>
       </div>
@@ -2290,12 +2290,6 @@ function calcHybrid(){
   var optionsEl = document.getElementById('h-options');
   if(optionsEl){
     optionsEl.innerHTML =
-      '<div style="background:var(--ks-cream);padding:20px 24px;border-radius:var(--radius);margin-bottom:20px;text-align:center">'+
-        '<div style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ks-grey);margin-bottom:6px">Coût de base livreur dédié</div>'+
-        '<div style="font-family:\'Fraunces\',serif;font-size:2.2rem;color:var(--ks-teal);font-weight:600">'+fmt(BASE_DEDIE)+' <span style="font-size:1rem;color:var(--ks-grey)">MAD HT/mois</span></div>'+
-        '<div style="font-size:.82rem;color:var(--ks-grey);margin-top:4px">Moto · Management · Dispatch · Géoloc · Assurance</div>'+
-        '<div style="font-size:.78rem;color:var(--ks-grey);margin-top:2px">+ marge WFC '+Math.round(margin*100)+'% = <strong>'+fmt(BASE_DEDIE*(1+margin))+' MAD</strong> facturé/livreur</div>'+
-      '</div>'+
       '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">'+
       // OPTION A — Branding Standard
       '<div style="padding:28px;border-radius:var(--radius);border:2px solid var(--ks-teal);background:linear-gradient(165deg,#f0fffa,white);position:relative">'+
@@ -2370,14 +2364,7 @@ function calcHybrid(){
   var gainB = glovoCost - premiumTotal;
   var gainEl = document.getElementById('h-gain');
   if(gainEl){
-    gainEl.innerHTML =
-      '<div style="padding:24px 28px;background:linear-gradient(135deg,var(--ks-teal),#024d3f);color:white;border-radius:var(--radius)">'+
-        '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:center">'+
-          '<div><div style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:4px">Commission Glovo récupérée</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;font-weight:600">'+fmt(glovoCost)+' MAD</div><div style="font-size:.78rem;opacity:.7">'+fmt(totalMigratedMonthly)+' cmd × '+basket+' MAD × '+Math.round(glovoPct*100)+'%</div></div>'+
-          '<div><div style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:4px">Gain net Option A</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;font-weight:600">+'+fmt(gainA)+' MAD</div><div style="font-size:.78rem;opacity:.7">/mois · Branding Standard</div></div>'+
-          '<div><div style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:4px">Gain net Option B</div><div style="font-family:\'Fraunces\',serif;font-size:1.8rem;font-weight:600">+'+fmt(gainB)+' MAD</div><div style="font-size:.78rem;opacity:.7">/mois · Branding Premium</div></div>'+
-        '</div>'+
-      '</div>';
+    gainEl.innerHTML
   }
 }
 if(document.getElementById('h-canni')) calcHybrid();
